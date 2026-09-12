@@ -35,3 +35,9 @@ website/vendor
 *.winfile eol=crlf
 
 .env
+
+# OpenSpec planning artifacts. Kept untracked on this fork only.
+# Never force-added; the artifacts live in the working tree and stay
+# local to this checkout. They do not flow into feature branches,
+# into main, or into upstream.
+openspec/
