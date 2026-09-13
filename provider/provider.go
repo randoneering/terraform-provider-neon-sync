@@ -41,17 +41,14 @@ var p = &schema.Provider{
 		},
 	},
 	ResourcesMap: map[string]*schema.Resource{
-		"neon_api_key":                  resourceAPIKey(),
 		"neon_project":                  resourceProject(),
 		"neon_branch":                   resourceBranch(),
 		"neon_endpoint":                 resourceEndpoint(),
 		"neon_role":                     resourceRole(),
 		"neon_database":                 resourceDatabase(),
 		"neon_project_permission":       resourceProjectPermission(),
-		"neon_jwks_url":                 resourceJwksUrl(),
 		"neon_vpc_endpoint_assignment":  resourceVPCEndpointAssignment(),
 		"neon_vpc_endpoint_restriction": resourceVPCEndpointRestriction(),
-		"neon_org_api_key":              resourceOrgAPIKey(),
 	},
 	DataSourcesMap: map[string]*schema.Resource{
 		"neon_project":              dataSourceProject(),
@@ -118,11 +115,6 @@ func (p *frameworkProvider) Schema(_ context.Context, _ frameworkprovider.Schema
 	}
 }
 
-type neonClient struct {
-	sdk    *neon.Client
-	sdkCfg neon.Config
-}
-
 func (p *frameworkProvider) Configure(ctx context.Context, req frameworkprovider.ConfigureRequest,
 	resp *frameworkprovider.ConfigureResponse) {
 	var config frameworkProviderConfigModel
@@ -146,14 +138,14 @@ func (p *frameworkProvider) Configure(ctx context.Context, req frameworkprovider
 		return
 	}
 
-	resp.ResourceData = &neonClient{
-		sdk:    client,
-		sdkCfg: cfg,
-	}
+	resp.ResourceData = client
 }
 
 func (p *frameworkProvider) Resources(_ context.Context) []func() resource.Resource {
 	return []func() resource.Resource{
+		NewAPIKeyResource,
+		NewOrgAPIKeyResource,
+		NewJWKSURLResource,
 		NewBranchBackupScheduleResource,
 	}
 }
