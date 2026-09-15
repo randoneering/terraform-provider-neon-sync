@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Terraform CLI local cache and lock files
 .terraform/
 .terraform.lock.hcl
@@ -38,3 +39,11 @@ crash.*.log
 
 # Plugin cache (downloaded provider binaries; might pin specific versions we don't want)
 .terraform.d/plugins/
+=======
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.backup
+tfplan
+*.tfplan
+>>>>>>> 0a1af366450465d1d222eaf80c92b7f8f543c577

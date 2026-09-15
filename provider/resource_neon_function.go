@@ -115,7 +115,11 @@ func (r *neonFunctionResource) Schema(_ context.Context, _ resource.SchemaReques
 				Optional:      true,
 				Sensitive:     true,
 				PlanModifiers: mapRequiresReplace,
+<<<<<<< HEAD
 				Description:   "Environment variables to expose to the function. Values are write-only and never returned by the API. Known limit: setting non-empty values currently fails at apply due to an upstream Plugin Framework reflection bug. Omit the attribute or set it to `{}` to avoid the failure.",
+=======
+				Description:   "Environment variables to expose to the function. Values are write-only and never returned by the API.",
+>>>>>>> 0a1af366450465d1d222eaf80c92b7f8f543c577
 			},
 			"created_at": schema.StringAttribute{
 				Computed:    true,

@@ -45,11 +45,17 @@ resource "neon_function" "this" {
   name          = var.function_name
   zip_file_path = "${path.module}/function.zip"
 
+<<<<<<< HEAD
   # NOTE: environment_variables triggers a known framework bug; leaving
   # uncommented below would currently fail apply. See README.
   # environment_variables = {
   #   LOG_LEVEL = "info"
   # }
+=======
+  environment_variables = {
+    LOG_LEVEL = "info"
+  }
+>>>>>>> 0a1af366450465d1d222eaf80c92b7f8f543c577
 }
 
 output "project_id" {

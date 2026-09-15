@@ -54,7 +54,11 @@ resource "neon_function" "example" {
 
 ### Optional
 
+<<<<<<< HEAD
 - `environment_variables` (Map of String, Sensitive) Environment variables to expose to the function. Values are write-only and never returned by the API. **Known limit:** setting non-empty values currently fails at `terraform apply` due to an upstream Plugin Framework reflection bug. Omit the attribute or set it to `{}` to avoid the failure.
+=======
+- `environment_variables` (Map of String, Sensitive) Environment variables to expose to the function. Values are write-only and never returned by the API.
+>>>>>>> 0a1af366450465d1d222eaf80c92b7f8f543c577
 - `name` (String) Free-form display name for the function. Updatable in place.
 
 ### Read-Only

@@ -66,6 +66,7 @@ echo "module.exports = async () => ({ statusCode: 200, body: 'ok' });" > _bundle
 (cd _bundle_tmp && zip -q ../function.zip index.js)
 rm -rf _bundle_tmp
 ```
+<<<<<<< HEAD
 
 ## Known issue
 
@@ -73,3 +74,5 @@ rm -rf _bundle_tmp
 `Value Conversion Error` ("Cannot use attr.Value attr.Value, only basetypes.StringValue is supported")
 on apply due to a Plugin Framework reflection bug. The HCL in `main.tf`
 has the attribute commented out. Uncomment to reproduce the issue.
+=======
+>>>>>>> 0a1af366450465d1d222eaf80c92b7f8f543c577
