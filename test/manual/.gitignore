@@ -1,0 +1,40 @@
+# Terraform CLI local cache and lock files
+.terraform/
+.terraform.lock.hcl
+.terraform.tfstate.lock.info
+
+# State files (contain resource IDs, connection URIs, secrets)
+terraform.tfstate
+terraform.tfstate.backup
+terraform.tfstate.d/
+*.tfstate
+*.tfstate.backup
+
+# Saved plan files (may contain sensitive attribute values)
+*.tfplan
+tfplan
+*.tfplan.json
+
+# Variable files (often contain credentials)
+*.tfvars
+*.tfvars.json
+*.auto.tfvars
+*.auto.tfvars.json
+
+# Override files (used by terraform plan/apply for ad-hoc overrides)
+*_override.tf
+*_override.tf.json
+*_override.tfoverride
+.terraform.tfstate.lock.info
+
+# Crash logs (may include attribute values from failed applies)
+crash.log
+crash.*.log
+
+# CLI configuration (may contain credentials, dev_overrides paths)
+.terraformrc
+.terraformrc.*
+.terraformrc.json
+
+# Plugin cache (downloaded provider binaries; might pin specific versions we don't want)
+.terraform.d/plugins/
