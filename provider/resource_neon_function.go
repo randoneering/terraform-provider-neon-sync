@@ -548,7 +548,7 @@ func readEnvironmentVariables(ctx context.Context, attrVal types.Map) (map[strin
 
 // buildEnvironmentVariablesMap re-encodes the SDK map back into the
 // Terraform map attribute so the state carries the user-supplied values.
-func buildEnvironmentVariablesMap(ctx context.Context, env map[string]string) types.Map {
+func buildEnvironmentVariablesMap(_ context.Context, env map[string]string) types.Map {
 	if len(env) == 0 {
 		return types.MapNull(types.StringType)
 	}
@@ -556,7 +556,7 @@ func buildEnvironmentVariablesMap(ctx context.Context, env map[string]string) ty
 	for k, v := range env {
 		elems[k] = types.StringValue(v)
 	}
-	m, diags := types.MapValueFrom(ctx, types.StringType, elems)
+	m, diags := types.MapValue(types.StringType, elems)
 	if diags.HasError() {
 		return types.MapNull(types.StringType)
 	}
