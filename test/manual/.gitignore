@@ -25,7 +25,6 @@ tfplan
 *_override.tf
 *_override.tf.json
 *_override.tfoverride
-.terraform.tfstate.lock.info
 
 # Crash logs (may include attribute values from failed applies)
 crash.log
