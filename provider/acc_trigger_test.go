@@ -142,9 +142,7 @@ resource "neon_trigger" "this" {
   name           = %q
   type           = "schedule"
   function_slug  = %q
-  schedule = {
-    cron = %q
-  }
+  cron           = %q
 }
 `, projectName, triggerName, fnSlug, cron)
 }
@@ -167,10 +165,8 @@ resource "neon_trigger" "this" {
   name           = %q
   type           = "storage_object_created"
   function_slug  = %q
-  storage_object_created = {
-    bucket_name = neon_bucket.this.name
-    prefix      = %q
-  }
+  bucket_name    = neon_bucket.this.name
+  prefix         = %q
   depends_on = [neon_bucket.this]
 }
 `, projectName, bucket, triggerName, fnSlug, prefix)

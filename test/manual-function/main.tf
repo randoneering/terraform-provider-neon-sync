@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     neon = {
-      source = "local/neondatabase/neon"
+      source = "neondatabase/neon"
     }
   }
 }
